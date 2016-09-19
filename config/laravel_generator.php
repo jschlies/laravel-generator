@@ -19,9 +19,9 @@ return [
 
         'repository'        => app_path('Repositories/'),
 
-        'routes'            => app_path('Http/routes.php'),
+        'routes'            => base_path('routes/web.php'),
 
-        'api_routes'        => app_path('Http/api_routes.php'),
+        'api_routes'        => base_path('routes/api.php'),
 
         'request'           => app_path('Http/Requests/'),
 
@@ -42,14 +42,8 @@ return [
         'schema_files'      => base_path('resources/model_schemas/'),
 
         'templates_dir'     => base_path('resources/infyom/infyom-generator-templates/'),
-        
-        'api_controller_name_suffix' => 'APIController',
-        
-        'controller_name_suffix' => 'Controller',
-        
-        'api_request_name_suffix' => 'APIRequest',
-        
-        'request_name_suffix' => 'AdminCMSRequest',
+
+        'modelJs'           => base_path('resources/assets/js/models/'),
     ],
 
     /*
@@ -123,6 +117,24 @@ return [
 
     /*
     |--------------------------------------------------------------------------
+    | Prefixes
+    |--------------------------------------------------------------------------
+    |
+    */
+
+    'prefixes' => [
+
+        'route' => '',  // using admin will create route('admin.?.index') type routes
+
+        'path' => '',
+
+        'view' => '',  // using backend will create return view('backend.?.index') type the backend views directory
+
+        'public' => '',
+    ],
+
+    /*
+    |--------------------------------------------------------------------------
     | Add-Ons
     |--------------------------------------------------------------------------
     |
@@ -130,7 +142,7 @@ return [
 
     'add_on' => [
 
-        'swagger'       => true,
+        'swagger'       => false,
 
         'tests'         => true,
 
