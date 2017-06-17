@@ -624,7 +624,7 @@ class ModelGenerator extends BaseGenerator
                 $functionHasManyArr[] = $templateDataFunction;
             }
             $templateData = str_replace(
-                '$HASMANYSOFTDELETEAASCADEFUNCTIONS$', implode(PHP_EOL.PHP_EOL.str_repeat(' ', 8), $functionHasManyArr), $templateData
+                '$HASMANYSOFTDELETEAASCADEFUNCTIONS$', implode(PHP_EOL.PHP_EOL.str_repeat(' ', 8), array_unique($functionHasManyArr)), $templateData
             );
             $functionArr[] = $templateData;
         }
